@@ -1,0 +1,13 @@
+.App {
+   font-family: sans-serif;
+   text-align: center;
+}
+text {
+   font-size: 0.5em;
+}
+.square {
+   width: 100px;
+   height: 10px;
+   border-width: 2;
+   background-color: red;
+}
