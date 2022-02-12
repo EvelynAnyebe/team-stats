@@ -47,7 +47,7 @@ app.use('/',authRouter);
 app.all('*', (req, res) => {
   res.status(404).send({
     statusCode: 404,
-    message: `OOPs!! from Hitec Backend. Server can't find ${req.originalUrl}.
+    message: `OOPs!! Server can't find ${req.originalUrl}.
     This could be a typographical issue. 
     Check the API specification for further guidiance`,
   });

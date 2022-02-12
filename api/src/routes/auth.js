@@ -7,7 +7,7 @@ const AuthController = require('../controllers/auth.controller');
 const { validateToken } = require('../middleware/auth.middleware');
 
 // eslint-disable-next-line max-len
-router.post('/', createUserValidation, AuthController.createUser);
+router.post('/signup', createUserValidation, AuthController.createUser);
 router.post('/refreshToken', validateToken, AuthController.refreshToken);
 router.post('/login', loginUserValidation, AuthController.loginUser);
 
