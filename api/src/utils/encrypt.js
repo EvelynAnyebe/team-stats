@@ -12,8 +12,7 @@ module.exports.decrypt = (value) => {
 };
 
 module.exports.hashedPassword = async (password) =>
-  await bcrypt.hash(password, await bcrypt.genSalt());
-
+await bcrypt.hash(password, await bcrypt.genSalt());
 module.exports.createToken = async (value, time) => {
   const token = await jwt.sign(value, process.env.JWT_SECRET, {
     expiresIn: time,

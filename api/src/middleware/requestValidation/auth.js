@@ -1,4 +1,4 @@
-const { ErrorResponse } = require('../../utils/appResponse');
+const { ErrorResponse } =require('../../utils/appResponse');
 const ResponseBody = require('../validate.middleware');
 
 module.exports = {
