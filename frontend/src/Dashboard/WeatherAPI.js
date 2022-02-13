@@ -2,13 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import "../styles.css";
 import Weather from "./Weather.js";
 
-const WeatherAPI = () => {
+const WeatherAPI = ({ coordinates }) => {
    //    const [lat, setLat] = useState(-68.1193);
    //    const [long, setLong] = useState(-16.4897);
    const [data, setData] = useState([]);
 
-   const lat = 35;
-   const long = 139;
+   const lat = coordinates[0];
+   const long = coordinates[1];
 
    const isMounted = useRef(true);
 

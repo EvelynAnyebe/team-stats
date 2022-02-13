@@ -65,11 +65,60 @@
    font-size: 24px;
    font-weight: 600;
 }
-.button {
+/* .button {
    width: 35px;
    height: 35px;
-}
+} */
 
 text {
    font-size: 0.5em;
+}
+.modal {
+   position: fixed;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.modal-content {
+   width: 500px;
+   background-color: #fff;
+}
+
+.modal-header,
+.modal-footer {
+   padding: 10px;
+}
+.modal-title {
+   margin: 0;
+}
+.modal-body {
+   padding: 10px;
+   border-top: 1px solid #eee;
+   border-bottom: 1px solid #eee;
+}
+.submitButton {
+   margin: 20px;
+}
+.smallSpace {
+   /* margin: 1%; */
+   padding: 1%;
+}
+.button {
+   background-color: black;
+   color: white;
+   font-size: 16px;
+   padding: 3px 30px;
+   border-radius: 5px;
+   margin: 10px 0px;
+   cursor: pointer;
+   /* &:disabled {
+      color: grey;
+      opacity: 0.7;
+      cursor: default;
+    } */
 }
