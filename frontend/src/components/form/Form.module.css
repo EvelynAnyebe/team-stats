@@ -1,0 +1,11 @@
+.formWrapper{
+    background-color: #C4C4C4;
+}
+.appForm{
+    position: absolute;
+    width: 597px;
+    height: 679px;
+    padding:15px;
+    background: #333333;
+    border-radius: 5px;
+}
