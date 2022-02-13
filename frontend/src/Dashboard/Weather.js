@@ -4,7 +4,7 @@ import moment from "moment";
 
 const WeatherCard = ({ weatherData }) => (
    <div className="main">
-      <div className="top">
+      <div className="top center">
          <p className="header">{weatherData.name}</p>
       </div>
       <div className="flex">

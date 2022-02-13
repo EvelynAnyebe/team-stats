@@ -17,7 +17,7 @@ const initialMarkers = [
    { markerOffset: 15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
    { markerOffset: 15, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
    { markerOffset: 15, name: "Santiago", coordinates: [-70.6693, -33.4489] },
-   { markerOffset: 15, name: "Potato", coordinates: [0.6693, 10.4489] },
+   { markerOffset: 15, name: "Glasgow", coordinates: [55.8642, 4.2518] },
 ];
 
 const newsAndWeather = (specificCooridnates) => (
@@ -30,12 +30,14 @@ const newsAndWeather = (specificCooridnates) => (
 const MapChart = ({ setTooltipContent }) => {
    const { user } = useContextGetter();
    const [show, setShow] = useState(false);
-   const [markers,setMarkers] =  useState(initialMarkers);
+   const [markers, setMarkers] = useState(initialMarkers);
 
-   const createMarkers = (teamMembers) =>teamMembers.map(teamMember=> (
-      { markerOffset: 15, name:teamMember.name, coordinates:[teamMember.latitude, teamMember.longitude] })
-   );
-   
+   const createMarkers = (teamMembers) =>
+      teamMembers.map((teamMember) => ({
+         markerOffset: 15,
+         name: teamMember.name,
+         coordinates: [teamMember.latitude, teamMember.longitude],
+      }));
 
    const fetchData = async () => {
       try {
@@ -49,12 +51,12 @@ const MapChart = ({ setTooltipContent }) => {
       } finally {
          window.scrollTo(0, 0);
       }
-   }
+   };
 
    useEffect(() => {
-      if(user){
+      if (user) {
          fetchData();
-      }   
+      }
    }, [user]);
    return (
       <>
@@ -104,9 +106,9 @@ const MapChart = ({ setTooltipContent }) => {
                   ))
                }
             </Geographies>
-            {markers.map(({ name, coordinates, markerOffset },id) => (
+            {markers.map(({ name, coordinates, markerOffset }, id) => (
                <Marker
-                  key={name+id}
+                  key={name + id}
                   coordinates={coordinates}
                   style={{
                      default: { outline: "none" },

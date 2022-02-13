@@ -47,11 +47,17 @@ const NewsAPI = ({ coordinates }) => {
 
    return (
       <Container>
-         <Header as="h2" style={{ textAlign: "center", margin: 20 }}>
-            News
-         </Header>
-         <div style={{ backgroundColor: "#01579b", marginBottom: "1%" }}>
-            {articles.length > 0 && <ArticleList articles={articles} />}
+         <div style={{ backgroundColor: "#01579b", borderRadius: "20px" }}>
+            <Header as="h2" style={{ textAlign: "center", margin: 0 }}>
+               News
+            </Header>
+            <div
+               style={{
+                  marginBottom: "1%",
+               }}
+            >
+               {articles.length > 0 && <ArticleList articles={articles} />}
+            </div>
          </div>
       </Container>
    );
