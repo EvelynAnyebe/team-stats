@@ -9,8 +9,8 @@ const API = axios.create({
 
 API.interceptors.request.use((request) => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
-  if (loggedInUser && loggedInUser.hasOwnProperty("token")) {
-    request.headers.Authorization = `Bearer ${loggedInUser.token}`;
+  if (loggedInUser && loggedInUser.hasOwnProperty("accessToken")) {
+    request.headers.Authorization = `Bearer ${loggedInUser.accessToken}`;
     request.headers['Access-Control-Allow-Origin']=true;
   }
 

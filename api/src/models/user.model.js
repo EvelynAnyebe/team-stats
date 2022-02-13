@@ -19,7 +19,7 @@ const UserSchema = Schema(
             required: true,
             minLength: 8,
             select: false,
-          },
+        },
         firstName: {
             type: String,
             minLength: 2,
@@ -38,15 +38,19 @@ const UserSchema = Schema(
         },
         address: {
             houseNumber: String,
-            address:String,
+            address: String,
             street: String,
             city: String,
             postCode: String,
             country: String,
             region: String,
-            location:{type : Array , "default" : []}
-          },
-        teamMembers:{type: Array,"default" : []}  
+            location: { type: Array, "default": [] }
+        },
+        teamMembers: [{
+                name: String,
+                latitude: Number,
+                longitude: Number
+            }]
     },
     { timestamps: true }
 );

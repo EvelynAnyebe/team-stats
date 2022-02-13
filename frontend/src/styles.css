@@ -1,0 +1,126 @@
+.App {
+   font-family: sans-serif;
+   text-align: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Recursive&display=swap");
+
+.main {
+   width: 900px;
+   border-radius: 20px;
+   background-color: #01579b;
+   margin-left: 10px;
+}
+
+.top {
+   height: 40px;
+   background-color: #424242;
+   color: whitesmoke;
+   /* padding: 10px; */
+   border-radius: 20px 20px 0 0;
+   font-family: "Recursive", sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+}
+
+.header {
+   background-color: #424242;
+   color: whitesmoke;
+   margin: 5px 0px 0px 10px;
+   font-size: 25px;
+   border-radius: 20px 20px 0 0;
+   font-family: "Recursive", sans-serif;
+}
+
+.day {
+   padding: 15px;
+   color: whitesmoke;
+   font-family: "Recursive", sans-serif;
+   font-size: 24px;
+   font-weight: 600;
+}
+
+.temp {
+   padding: 15px;
+   color: whitesmoke;
+   font-family: "Recursive", sans-serif;
+   font-size: 18px;
+}
+
+.flex {
+   display: flex;
+   justify-content: space-between;
+}
+
+.sunrise-sunset {
+   padding: 15px;
+   color: whitesmoke;
+   font-family: "Recursive", sans-serif;
+   font-size: 16px;
+}
+
+.description {
+   padding: 15px;
+   color: whitesmoke;
+   font-family: "Recursive", sans-serif;
+   font-size: 24px;
+   font-weight: 600;
+}
+/* .button {
+   width: 35px;
+   height: 35px;
+} */
+
+text {
+   font-size: 0.5em;
+}
+.modal {
+   position: fixed;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.modal-content {
+   width: 500px;
+   background-color: #fff;
+   display: "flex";
+   align-items: center;
+}
+
+.modal-header,
+.modal-footer {
+   padding: 10px;
+}
+.modal-title {
+   margin: 0;
+}
+.modal-body {
+   padding: 10px;
+   border-top: 1px solid #eee;
+   border-bottom: 1px solid #eee;
+}
+.submitButton {
+   margin: 20px;
+}
+.smallSpace {
+   padding: 3%;
+}
+.button {
+   font-size: 16px;
+   padding: 3px 30px;
+   border-radius: 5px;
+   margin: 10px 0px;
+   cursor: pointer;
+}
+.image {
+   width: 50%;
+   height: 50%;
+   margin: 2%;
+}
