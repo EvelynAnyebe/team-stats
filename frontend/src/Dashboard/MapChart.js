@@ -1,5 +1,9 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useEffect } from "react";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+
+import useContextGetter from "../hooks/useContextGetter";
+import { formatErrors } from "../utils/error.utils";
+import API from "../utils/BackendApi";
 
 import "../styles.css";
 import WeatherAPI from "./WeatherAPI";
@@ -9,7 +13,7 @@ import Modal from "./Modal";
 const geoUrl =
    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const markers = [
+const initialMarkers = [
    { markerOffset: 15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
    { markerOffset: 15, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
    { markerOffset: 15, name: "Santiago", coordinates: [-70.6693, -33.4489] },
@@ -24,7 +28,28 @@ const newsAndWeather = (specificCooridnates) => (
 );
 
 const MapChart = ({ setTooltipContent }) => {
+   const { user } = useContextGetter();
    const [show, setShow] = useState(false);
+   const [markers,setMarkers] =  useState(initialMarkers);
+
+   const createMarkers = (teamMembers) =>teamMembers.map(teamMember=> (
+      { markerOffset: 15, name:teamMember.name, coordinates:[teamMember.latitude, teamMember.longitude] })
+   );
+   
+
+   useEffect( async () => {
+      try {
+         const res = await API.get(`/users/${user.user._id}`);
+         if (res.status===200) {
+            const dbMarkers=createMarkers(res.data.data.teamMembers);
+            setMarkers(dbMarkers);
+         }
+       } catch (e) {
+         //console.log(formatErrors(e))
+       } finally {
+         window.scrollTo(0, 0);
+       }   
+  }, [user]); 
 
    return (
       <>
@@ -74,9 +99,9 @@ const MapChart = ({ setTooltipContent }) => {
                   ))
                }
             </Geographies>
-            {markers.map(({ name, coordinates, markerOffset }) => (
+            {markers.map(({ name, coordinates, markerOffset },id) => (
                <Marker
-                  key={name}
+                  key={name+id}
                   coordinates={coordinates}
                   style={{
                      default: { outline: "none" },
