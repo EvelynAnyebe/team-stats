@@ -3,10 +3,14 @@ import "../styles.css";
 import { Container, Header } from "semantic-ui-react";
 import ArticleList from "./ArticleList";
 
-const NewsAPI = () => {
+const NewsAPI = ({ coordinates }) => {
    const [articles, setArticles] = useState([]);
 
    const isMounted = useRef(true);
+
+   const news_coords = coordinates[0].toString() + ";" + coordinates[1].toString();
+
+   console.log(news_coords);
 
    useEffect(() => {
       const fetchNews = async () => {
@@ -16,6 +20,7 @@ const NewsAPI = () => {
                method: "GET",
                headers: {
                   "x-bingapis-sdk": "true",
+                  "x-search-location": news_coords,
                   "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
                   "x-rapidapi-key": process.env.REACT_APP_NEWS_API_KEY,
                },

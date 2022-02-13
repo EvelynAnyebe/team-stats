@@ -18,7 +18,7 @@ const markers = [
 
 const newsAndWeather = (specificCooridnates) => (
    <div>
-      <NewsAPI />
+      <NewsAPI coordinates={specificCooridnates} />
       <WeatherAPI coordinates={specificCooridnates} />
    </div>
 );
