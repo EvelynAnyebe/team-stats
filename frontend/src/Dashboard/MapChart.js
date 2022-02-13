@@ -37,20 +37,25 @@ const MapChart = ({ setTooltipContent }) => {
    );
    
 
-   useEffect( async () => {
+   const fetchData = async () => {
       try {
          const res = await API.get(`/users/${user.user._id}`);
-         if (res.status===200) {
-            const dbMarkers=createMarkers(res.data.data.teamMembers);
+         if (res.status === 200) {
+            const dbMarkers = createMarkers(res.data.data.teamMembers);
             setMarkers(dbMarkers);
          }
-       } catch (e) {
+      } catch (e) {
          //console.log(formatErrors(e))
-       } finally {
+      } finally {
          window.scrollTo(0, 0);
-       }   
-  }, [user]); 
+      }
+   }
 
+   useEffect(() => {
+      if(user){
+         fetchData();
+      }   
+   }, [user]);
    return (
       <>
          <Modal onClose={() => setShow(false)} show={show} />
