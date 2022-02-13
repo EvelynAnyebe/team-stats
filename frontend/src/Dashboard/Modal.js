@@ -42,7 +42,7 @@ const Modal = (props) => {
                      <input className="button" type="submit" value="Submit" />
                   </div>
                </form>
-               <div className="modal-footer">
+               <div className="modal-footer submitButton">
                   <button onClick={props.onClose} className="button">
                      Close
                   </button>

@@ -29,7 +29,7 @@ const MapChart = ({ setTooltipContent }) => {
    return (
       <>
          <Modal onClose={() => setShow(false)} show={show} />
-         <div style={{ width: "100%" }}>
+         <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
             <button
                className="button"
                style={{
