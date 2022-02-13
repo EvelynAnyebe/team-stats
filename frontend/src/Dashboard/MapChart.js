@@ -2,6 +2,8 @@ import React, { memo } from "react";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 
 import "../styles.css";
+import WeatherAPI from "./WeatherAPI";
+import NewsAPI from "./NewsAPI";
 
 const geoUrl =
    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -13,14 +15,17 @@ const markers = [
    { markerOffset: 15, name: "Potato", coordinates: [0.6693, 10.4489] },
 ];
 
-const temp = (
+const newsAndWeather = () => (
    <div>
-      <div>{`Raining — 25C`}</div>
-      <div>{`Potato — okkk`}</div>
+      <NewsAPI />
+      <WeatherAPI />
    </div>
 );
 
 const MapChart = ({ setTooltipContent }) => {
+   console.log("???");
+   setTooltipContent(newsAndWeather);
+
    return (
       <ComposableMap
          data-tip=""
@@ -65,7 +70,7 @@ const MapChart = ({ setTooltipContent }) => {
                   pressed: { fill: "#FFFFFF", outline: "none" },
                }}
                onMouseEnter={() => {
-                  setTooltipContent(temp);
+                  setTooltipContent(newsAndWeather);
                }}
                onMouseLeave={() => {
                   setTooltipContent("");
