@@ -26,8 +26,6 @@ const NewsAPI = () => {
                if (isMounted) {
                   const articlesList = response.value.slice(0, 2);
                   setArticles(articlesList);
-
-                  //   setData(response);
                }
             })
             .catch((err) => {
@@ -45,7 +43,7 @@ const NewsAPI = () => {
    return (
       <Container>
          <Header as="h2" style={{ textAlign: "center", margin: 20 }}>
-            Articles
+            News
          </Header>
          {articles.length > 0 && <ArticleList articles={articles} />}
       </Container>

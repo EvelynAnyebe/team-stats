@@ -23,9 +23,6 @@ const newsAndWeather = () => (
 );
 
 const MapChart = ({ setTooltipContent }) => {
-   console.log("???");
-   setTooltipContent(newsAndWeather);
-
    return (
       <ComposableMap
          data-tip=""
