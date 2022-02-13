@@ -8,7 +8,7 @@ const validateMiddleware = {
       // eslint-disable-next-line no-invalid-this
       const cookies = validateMiddleware.parseCookie(req);
       const accessToken =
-        req.headers.authorization || req.params.token || cookies?.refreshToken;
+        req.headers.authorization.replace("Bearer ", "") || req.params.token || cookies?.refreshToken;
       if (!accessToken) {
         return res
           .status(Response.HTTP_FORBIDDEN)

@@ -38,10 +38,10 @@ app.use(expressValidator());
 
 //IMPORT ROUTES
 const authRouter = require('./routes/auth');
-//const userRouter = require('./routes/user');
+const userRouter = require('./routes/user');
 
 app.use('/',authRouter);
-//app.use('/users', userRouter);
+app.use('/users', userRouter);
 
 // UNHANDLE ROUTE RESPONSE
 app.all('*', (req, res) => {
