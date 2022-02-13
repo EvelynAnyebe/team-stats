@@ -13,7 +13,7 @@ body {
   font-family: "Work Sans",sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   color: #000;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +44,7 @@ h3 {
 
 p {
   font-weight: 300 !important;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.005em;
 }
 

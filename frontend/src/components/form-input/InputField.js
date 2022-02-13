@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorMessage, useField } from 'formik';
 import styles from './Input.module.css';
 
-export const InputField = ({label,className,inputClassName,placeholder, ...props}) => {
+const InputField = ({label,placeholder, ...props}) => {
     const [field, meta ] = useField(props);
     return (
         <>
@@ -15,3 +15,5 @@ export const InputField = ({label,className,inputClassName,placeholder, ...props
         <span className={styles.error}><ErrorMessage name={field.name}/></span></>
     )
 }
+
+export default InputField;
