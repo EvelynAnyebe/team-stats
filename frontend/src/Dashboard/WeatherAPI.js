@@ -3,8 +3,6 @@ import "../styles.css";
 import Weather from "./Weather.js";
 
 const WeatherAPI = ({ coordinates }) => {
-   //    const [lat, setLat] = useState(-68.1193);
-   //    const [long, setLong] = useState(-16.4897);
    const [data, setData] = useState([]);
 
    const lat = coordinates[0];
