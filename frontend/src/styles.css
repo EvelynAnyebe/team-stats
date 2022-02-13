@@ -105,20 +105,17 @@ text {
    margin: 20px;
 }
 .smallSpace {
-   /* margin: 1%; */
    padding: 1%;
 }
 .button {
-   background-color: black;
-   color: white;
    font-size: 16px;
    padding: 3px 30px;
    border-radius: 5px;
    margin: 10px 0px;
    cursor: pointer;
-   /* &:disabled {
-      color: grey;
-      opacity: 0.7;
-      cursor: default;
-    } */
+}
+.image {
+   width: 50%;
+   height: 50%;
+   margin: 2%;
 }
