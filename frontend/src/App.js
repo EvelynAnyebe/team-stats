@@ -4,6 +4,7 @@ import "./App.css";
 
 //App state
 import AppState from "./store/AppState";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 //Pages
 import SignUp from "./pages/Signup";
@@ -30,10 +31,11 @@ function App() {
                <Route exact path="/login">
                   <Login />
                </Route>
-               <Route exact path="/dashboard">
-                  <Dashboard setTooltipContent={setContent} />
+               <ProtectedRoute exact routePath="/dashboard">
+               <Dashboard setTooltipContent={setContent} />
                   <ReactTooltip>{content}</ReactTooltip>
-               </Route>
+            </ProtectedRoute>
+               
             </Switch>
          </AppState>
       </Router>
